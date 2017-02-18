@@ -1,0 +1,3 @@
+burger 3.50
+fries 1.50
+drink 2.00
