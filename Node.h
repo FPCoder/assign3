@@ -16,6 +16,8 @@ public:
     void setLeft(Node*);
     void setRight(Node*);
     bool operator==(Node<T> lhs) { return lhs.getData() == data; }
+    bool operator<(Node<T> lhs) { return data < lhs; }
+    bool operator>(Node<T> lhs) { return data > lhs; }
 private:
     vector<T> data;
     Node<T> *left;

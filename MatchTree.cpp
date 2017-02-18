@@ -21,7 +21,7 @@ Node<Entree>* MatchTree::add(Node<Entree> *curr, Node<Entree> *node) {
         return node;
     }
     else if (*curr == *node) {
-        curr->addData(node->getData());
+        curr->addData(node->getData().at(0));
     }
     else {
         if (*curr < *node) {
