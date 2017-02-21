@@ -15,9 +15,7 @@ public:
     void setData(T dt) { data = dt; }
 	void setLeft(Node* l) { left = l; }
 	void setRight(Node* r) { right = r; }
-    bool operator==(Node<T> lhs) { return lhs.getData() == data; }
-    bool operator<(Node<T> lhs) { return data < lhs.getData(); }
-    bool operator>(Node<T> lhs) { return data > lhs.getData(); }
+	bool operator==(Node<T> lhs) { return data == lhs; }
 private:
     T data;
     Node<T> *left;

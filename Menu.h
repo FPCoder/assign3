@@ -11,7 +11,6 @@ class Menu {
 public:
     Menu();
     Menu(ifstream&);
-    double findMatch(Entree);
 	void addToTree(MatchTree tree);
 private:
     vector<Entree> entrees;

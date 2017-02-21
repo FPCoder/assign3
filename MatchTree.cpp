@@ -8,36 +8,33 @@ MatchTree::MatchTree() {
 
 // public version
 void MatchTree::add(Entree dt) {
-	Node<Entree> newNode;
-	newNode.setData(dt);
-
     if (root == 0) {
 		vector<Entree> newRoot;
 		newRoot.push_back(dt);
-		root->setData(newRoot);
+		root = new Node<vector<Entree>>(newRoot);
     }
     else {
-        add(root, &newNode);
+        add(root, &dt);
     }
 }
 
 // private version
-Node<vector<Entree>>* MatchTree::add(Node<vector<Entree>> *curr, Node<Entree> *node) {
+Node<vector<Entree>>* MatchTree::add(Node<vector<Entree>> *curr, Entree *node) {
     if (curr == 0) {
-		Node<vector<Entree>> newNode;
-		vector<Entree> oldVec = newNode.getData();
+		Node<vector<Entree>> *newNode = new Node<vector<Entree>>;
+		vector<Entree> oldVec = newNode->getData();
 
-		oldVec.push_back(node->getData());
-		newNode.setData(oldVec);
-        return &newNode;
+		oldVec.push_back(*node);
+		newNode->setData(oldVec);
+        return newNode;
     }
-    else if (curr->getData().at(0) == node->getData()) {
-		vector<Entree> oldVec;
-		oldVec.push_back(node->getData());
+    else if (curr->getData().at(0).getName() == node->getName()) {
+		vector<Entree> oldVec = curr->getData();
+		oldVec.push_back(*node);
 		curr->setData(oldVec);
     }
     else {
-        if (curr->getData().at(0).getName() < node->getData().getName()) {
+        if (curr->getData().at(0).getName() < node->getName()) {
             curr->setRight(add(curr->getRight(), node));
         }
         else {
