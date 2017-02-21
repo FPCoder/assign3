@@ -11,9 +11,9 @@ public:
     void reset() { root = 0; }
     void inorder() { inorder(root); }
 private:
-    void inorder(Node<Entree>*);
-    Node<Entree>* add(Node<Entree>*, Node<Entree>*);
-    Node<Entree> *root;
+    void inorder(Node<vector<Entree>>*);
+    Node<vector<Entree>>* add(Node<vector<Entree>>*, Node<Entree>*);
+    Node<vector<Entree>> *root;
 };
 
 #endif // MATCHTREE_H

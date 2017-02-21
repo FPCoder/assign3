@@ -9,7 +9,6 @@ using namespace std;
 int main(int argc, char *argv[]) {
     ifstream inFS;
     vector<Menu> menus;
-    vector<Entree> *ents;
     MatchTree tree;
     double avg = 0;
 
@@ -26,14 +25,9 @@ int main(int argc, char *argv[]) {
         inFS.close();
     }
 
-    for (int i = 0; i < menus.size(); ++i) {
-        *ents = menus.at(i).getEntrees();
-        for (int j = 0; j < ents.size(); ++j) {
-            tree.add(ents.at(j));
-        }
-    }
+	for (int i = 0; i < menus.size(); ++i) {
 
-    
+	}
 
     return 0;
 }

@@ -23,7 +23,7 @@ Menu::Menu(ifstream &inFS) {
     }
 }
 
-double Menu::match(Entree ent) { // finds the price of a matching entree
+double Menu::findMatch(Entree ent) { // finds the price of a matching entree
     string str = ent.getName();
 
     for (int i = 0; i < entrees.size(); ++i) {

@@ -10,8 +10,7 @@ class Menu {
 public:
     Menu();
     Menu(ifstream&);
-    double match(Entree);
-    vector<Entree> getEntrees() const { return entrees; }
+    double findMatch(Entree);
 private:
     vector<Entree> entrees;
 };

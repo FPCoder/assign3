@@ -16,12 +16,11 @@ public:
     bool operator==(Entree lhs) { return name == lhs.getName(); }
     bool operator<(Entree lhs) { return name < lhs.getName(); }
     bool operator>(Entree lhs) { return name > lhs.getName(); }
-    string operator<<(Entree lhs) { 
-        string ret = lhs.getName();
-        ret += " ";
-        ret += lhs.getPrice();
-        return ret;
-    }
+	friend ostream& operator<<(ostream& out, const Entree& ent) // output
+	{
+		out << ent.getName() << " " << ent.getPrice();
+		return out;
+	}
 private:
     string name;
     double price;

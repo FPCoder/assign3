@@ -7,19 +7,19 @@ using namespace std;
 template <typename T>
 class Node {
 public:
-    Node();
-    Node(T, Node* l = 0, Node* r = 0);
-    vector<T> getData() const { return data; }
+	Node() {}
+	Node(T dt, Node* l = 0, Node* r = 0) : data(dt), left(l), right(r) {}
+    T getData() const { return data; }
     Node* getLeft() const { return left; }
     Node* getRight() const { return right; }
-    void addData(T dt) { data.push_back(dt); }
-    void setLeft(Node*);
-    void setRight(Node*);
+    void setData(T dt) { data = dt; }
+	void setLeft(Node* l) { left = l; }
+	void setRight(Node* r) { right = r; }
     bool operator==(Node<T> lhs) { return lhs.getData() == data; }
-    bool operator<(Node<T> lhs) { return data < lhs; }
-    bool operator>(Node<T> lhs) { return data > lhs; }
+    bool operator<(Node<T> lhs) { return data < lhs.getData(); }
+    bool operator>(Node<T> lhs) { return data > lhs.getData(); }
 private:
-    vector<T> data;
+    T data;
     Node<T> *left;
     Node<T> *right;
 };
