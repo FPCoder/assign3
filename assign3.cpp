@@ -26,8 +26,10 @@ int main(int argc, char *argv[]) {
     }
 
 	for (int i = 0; i < menus.size(); ++i) {
-
+		menus.at(i).addToTree(tree);
 	}
+
+	tree.inorder();
 
     return 0;
 }

@@ -3,6 +3,7 @@
 #include <vector>
 #include "Menu.h"
 #include "Entree.h"
+#include "MatchTree.h"
 using namespace std;
 
 Menu::Menu() {
@@ -32,4 +33,10 @@ double Menu::findMatch(Entree ent) { // finds the price of a matching entree
         }
     }
     return -1; // indicates no matching entree
+}
+
+void Menu::addToTree(MatchTree tree) {
+	for (int i = 0; i < entrees.size(); ++i) {
+		tree.add(entrees.at(i));
+	}
 }
