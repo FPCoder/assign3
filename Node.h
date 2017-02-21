@@ -12,6 +12,8 @@ public:
     T getData() const { return data; }
     Node* getLeft() const { return left; }
     Node* getRight() const { return right; }
+	bool hasLeft() const { return left != 0; }
+	bool hasRight() const { return right != 0; }
     void setData(T dt) { data = dt; }
 	void setLeft(Node* l) { left = l; }
 	void setRight(Node* r) { right = r; }

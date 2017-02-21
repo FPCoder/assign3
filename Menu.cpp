@@ -16,7 +16,6 @@ Menu::Menu(ifstream &inFS) {
     Entree ent;
 
     while (inFS >> itm >> prc) {
-		cout << itm << prc << endl;
         ent.setName(itm);
         ent.setPrice(prc);
         entrees.push_back(ent);
