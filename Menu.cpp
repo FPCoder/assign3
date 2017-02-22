@@ -6,10 +6,6 @@
 #include "MatchTree.h"
 using namespace std;
 
-Menu::Menu() {
-
-}
-
 Menu::Menu(ifstream &inFS) {
     string itm; // new item name
     double prc; // new price
@@ -22,8 +18,8 @@ Menu::Menu(ifstream &inFS) {
     }
 }
 
-void Menu::addToTree(MatchTree tree) {
+void Menu::addToTree(MatchTree *tree) {
 	for (int i = 0; i < entrees.size(); ++i) {
-		tree.add(entrees.at(i));
+		tree->add(entrees.at(i));
 	}
 }

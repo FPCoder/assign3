@@ -9,9 +9,9 @@ using namespace std;
 
 class Menu {
 public:
-    Menu();
+    Menu() {}
     Menu(ifstream&);
-	void addToTree(MatchTree tree);
+	void addToTree(MatchTree *tree);
 private:
     vector<Entree> entrees;
 };
